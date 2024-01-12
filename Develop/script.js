@@ -1,12 +1,26 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// value holder of lower case
+var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz"
+// value holder of upper case
+var upperCaseValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// value holder of numeric
+var numericValue = "0123456789"
+// value holder of special characters
+var speChar = "!@#$%^&*()?"
 
 function generatePassword() {
   // prompt for length
   var charLength = prompt("Please select the length of your password between 8 and 128 characters.")
   console.log(charLength);
 
+    // if statement for charLength
+    if (charLength < 8 || charLength > 128) {
+      alert("Please select a value between 8 and 128")
+
+      return;
+      };
+  
   // prompt for lowercase
   var lowerCase = confirm("Would you like to use lower case letters? Ok = Yes Cancel = No")
   console.log(lowerCase)
@@ -19,7 +33,10 @@ function generatePassword() {
   // prompt for special characters
   var speChar = confirm("Would you like to use $peci@l Ch@r@cter$? Ok = Yes Cancel = No")
   console.log(speChar)
-}
+
+
+
+};
 
 
 
