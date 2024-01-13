@@ -1,13 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // value holder of lower case
-var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz"
+var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz";
 // value holder of upper case
-var upperCaseValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var upperCaseValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // value holder of numeric
-var numericValue = "0123456789"
+var numericValue = "0123456789";
 // value holder of special characters
-var speChar = "!@#$%^&*()?"
+var speCharValue = "!@#$%^&*()?";
+// holds the possible characters based off of my selections
+var possibleChar = "";
+
 
 function generatePassword() {
   // prompt for length
@@ -24,18 +27,37 @@ function generatePassword() {
   // prompt for lowercase
   var lowerCase = confirm("Would you like to use lower case letters? Ok = Yes Cancel = No")
   console.log(lowerCase)
+
   // prompt for uppercase
   var upperCase = confirm("Would you like to use UPPER CASE letters? Ok = Yes Cancel = No")
   console.log(upperCase)
+
   // prompt for numeric
   var numeric = confirm("Would you like to use Numb3r5? Ok = Yes Cancel = No")
   console.log(numeric)
+
   // prompt for special characters
   var speChar = confirm("Would you like to use $peci@l Ch@r@cter$? Ok = Yes Cancel = No")
   console.log(speChar)
 
-
-
+  // if statement for lower
+  if (lowerCase === true) {
+    possibleChar = possibleChar + lowerCaseValue
+  }
+  // if statement for upper
+  if (upperCase === true) {
+    possibleChar = possibleChar + upperCaseValue
+  }
+  // if statement for numeric
+  if (numeric === true) {
+    possibleChar = possibleChar + numericValue
+  }
+  // if statement for special
+  if (speChar === true) {
+    possibleChar = possibleChar + speCharValue
+  }
+  // a check to make sure my if statements are working properly
+  console.log(possibleChar)
 };
 
 
