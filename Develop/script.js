@@ -1,5 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+// VALUE HOLDERS
+
 // value holder of lower case
 var lowerCaseValue = "abcdefghijklmnopqrstuvwxyz";
 // value holder of upper case
@@ -10,6 +13,9 @@ var numericValue = "0123456789";
 var speCharValue = "!@#$%^&*()?";
 // holds the possible characters based off of my selections
 var possibleChar = "";
+
+var passwordGen = "";
+
 
 
 function generatePassword() {
@@ -58,8 +64,36 @@ function generatePassword() {
   }
   // a check to make sure my if statements are working properly
   console.log(possibleChar)
-};
+  console.log(possibleChar.length)
 
+  if (lowerCase === false && upperCase === false && numeric === false && speChar === false){
+    alert("Please choose at least one of the selections. Or just set your password to password123")
+
+    passwordGen = "password123"
+
+    return;
+
+  
+  }
+
+  // make a math.random loop to select characters
+  for (var i = 0; i < charLength; i++) {
+    
+
+    var possibleCharRandom = Math.floor(Math.random() * possibleChar.length)
+    console.log(possibleCharRandom)
+
+    var randomChoices = possibleChar [possibleCharRandom]
+    console.log(randomChoices)
+    
+    passwordGen = passwordGen + randomChoices
+  }
+
+  console.log(passwordGen)
+  
+
+  
+};
 
 
 
@@ -68,10 +102,11 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
+  passwordGen = "";
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = passwordGen;
 
 }
 
