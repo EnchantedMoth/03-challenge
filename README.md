@@ -44,3 +44,6 @@ The following image shows the web application's appearance and functionality:
 
 The following GIF shows my web application in action:
 
+![My Finished Password Generator.](./Images/randomPasswordGenerator.gif)
+
+
